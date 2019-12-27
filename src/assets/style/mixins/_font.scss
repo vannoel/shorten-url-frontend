@@ -1,0 +1,108 @@
+// 5xl, -b, -l
+@mixin font-5xl {
+  font-size: 2rem;
+}
+@mixin font-5xl-b {
+  @include font-5xl;
+  font-weight: bold;
+}
+@mixin font-5xl-l {
+  @include font-5xl;
+  font-weight: lighter;
+}
+
+// 4xl, -b, -l
+@mixin font-4xl {
+  font-size: 1.875rem;
+}
+@mixin font-4xl-b {
+  @include font-4xl;
+  font-weight: bold;
+}
+@mixin font-4xl-l {
+  @include font-4xl;
+  font-weight: lighter;
+}
+
+// 3xl, -b, -l
+@mixin font-3xl {
+  font-size: 1.75rem;
+}
+@mixin font-3xl-b {
+  @include font-3xl;
+  font-weight: bold;
+}
+@mixin font-3xl-l {
+  @include font-3xl;
+  font-weight: lighter;
+}
+
+// 2xl, -b, -l
+@mixin font-2xl {
+  font-size: 1.5rem;
+}
+@mixin font-2xl-b {
+  @include font-2xl;
+  font-weight: bold;
+}
+@mixin font-2xl-l {
+  @include font-2xl;
+  font-weight: lighter;
+}
+
+// xl, -b, -l
+@mixin font-xl {
+  font-size: 1.25rem;
+}
+@mixin font-xl-b {
+  @include font-xl;
+  font-weight: bold;
+}
+@mixin font-xl-l {
+  @include font-xl;
+  font-weight: lighter;
+}
+
+// lg, -b, -l
+@mixin font-lg {
+  font-size: 1.125rem;
+}
+@mixin font-lg-b {
+  @include font-lg;
+  font-weight: bold;
+}
+@mixin font-lg-l {
+  @include font-lg;
+  font-weight: lighter;
+}
+
+// md, -b, -l
+@mixin font-md {
+  font-size: 1rem;
+}
+@mixin font-md-b {
+  @include font-md;
+  font-weight: bold;
+}
+@mixin font-md-l {
+  @include font-md;
+  font-weight: lighter;
+}
+
+// sm, -b
+@mixin font-sm {
+  font-size: 0.875rem;
+}
+@mixin font-sm-b {
+  @include font-sm;
+  font-weight: bold;
+}
+
+// xs, -b
+@mixin font-xs {
+  font-size: 0.75rem;
+}
+@mixin font-xs-b {
+  @include font-xs;
+  font-weight: bold;
+}

@@ -1,0 +1,10 @@
+.page {
+  @include padding-y(1rem);
+  
+  .page_section {
+    & + .page_section {
+      margin-top: 3rem;
+    }  
+  }
+}
+  
