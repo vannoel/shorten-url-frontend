@@ -81,46 +81,5 @@ export default {
       }
     }
   }
-
-  &.button-type-text {
-    border-color: transparent;
-    background-color: transparent;
-    @for $i from 1 through length($color-list-btn-text) {
-      $colorObj: nth($color-list-btn-text, $i);
-      &.button-color-#{map-get($colorObj, index)}
-      {
-        color: map-get($colorObj, textColor);
-        &:not(:disabled):hover{
-          color: map-get($colorObj, textColorHover);
-        }
-        &:not(:disabled):active{
-          color: map-get($colorObj, textColorActive);
-        }
-      }
-    }
-  }
-
-  &.button-type-inline {
-    border-color: transparent;
-    background-color: transparent;
-    @for $i from 1 through length($color-list-btn-text) {
-      $colorObj: nth($color-list-btn-text, $i);
-      &.button-color-#{map-get($colorObj, index)}
-      {
-        color: map-get($colorObj, textColor);
-        &:not(:disabled):hover{
-          color: map-get($colorObj, textColorHover);
-        }
-        &:not(:disabled):active{
-          color: map-get($colorObj, textColorActive);
-        }
-      }
-    }
-    &.button-size-lg,
-    &.button-size-md,
-    &.button-size-sm  {
-      padding: 0;
-    }
-  }
 }
 </style>

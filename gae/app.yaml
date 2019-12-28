@@ -1,3 +1,0 @@
-service: shorten-url
-runtime: custom
-env: flex

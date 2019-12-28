@@ -19,32 +19,16 @@ $color-button-solid-grey: (
   bgColorHover: $color-grey-d,
   bgColorActive: $color-grey-dd
 );
+$color-button-solid-red: (
+  index: 'red',
+  textColor: $color-white,
+  bgColor: $color-red,
+  bgColorHover: $color-red-d,
+  bgColorActive: $color-red-dd
+);
 
 $color-list-btn-solid:
 $color-button-solid-primary,
 $color-button-solid-teal,
-$color-button-solid-grey;
-
-$color-button-text-primary: (
-  index: 'primary',
-  textColor: $color-primary,
-  textColorHover: $color-primary-d,
-  textColorActive: $color-primary-dd
-);
-$color-button-text-teal: (
-  index: 'teal',
-  textColor: $color-teal,
-  textColorHover: $color-teal-d,
-  textColorActive: $color-teal-dd
-);
-$color-button-text-grey: (
-  index: 'grey',
-  textColor: $color-grey,
-  textColorHover: $color-grey-d,
-  textColorActive: $color-grey-dd
-);
-
-$color-list-btn-text:
-$color-button-text-primary,
-$color-button-text-teal,
-$color-button-text-grey;
+$color-button-solid-grey,
+$color-button-solid-red;

@@ -7,12 +7,14 @@
       <template v-for="(entry,index) in $slots">
         <div :key="index" 
           class="timeline_point">
-          <div class="point_frame">
+          <div class="point_frame"
+           data-aos="zoom-in">
             <div class="frame_content">
               <slot :name="index" />
             </div>
           </div>
-          <div class="point_dot" />
+          <div class="point_dot" 
+           data-aos="zoom-in"/>
           <div class="point_offset" 
             v-if="isDualSite"/>
         </div>
@@ -66,17 +68,18 @@ $point-size: 0.75rem;
     flex-shrink: 0;
   }
   .point_dot {
+    @include radius-full;
     position: relative;
     padding: $point-size;
     width: $point-size;
     height: $point-size;
-    border-radius: 50%;
     background-color:  $color-white;
+    z-index: 1;
     &:after {
       @include transition(background-color);
+      @include radius-full;
       content: '';
       position: absolute;
-      border-radius: 50%;
       top: $point-size/4;
       bottom: $point-size/4;
       left: $point-size/4;
@@ -106,10 +109,10 @@ $point-size: 0.75rem;
     }
   }
   .frame_content {
+    @include radius-lg;
     background-color:  $color-white;
     color: $color-grey-d;
     border: 1px solid  $color-white;
-    border-radius: 1rem;
     padding: 0.5rem 1rem;
     width:100%;
     height:100%;
@@ -132,10 +135,10 @@ $point-size: 0.75rem;
   }
   .timeline_point {
     &:nth-child(odd) {
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
     &:nth-child(even){
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
   }  
 }
@@ -194,10 +197,10 @@ $point-size: 0.75rem;
   }
   .timeline_point {
     &:nth-child(odd) {
-      flex-direction: column-reverse;
+      flex-direction: column;
     }
     &:nth-child(even){
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }  
 }
