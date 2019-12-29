@@ -9,10 +9,10 @@
         <FAI class="description_link" :icon="['fas', 'external-link-alt']" fixed-width @click="redirectURL('https://tinyurl.com/')"/>
       </p>
       <div class="row direction-row align-items-center">
-        <div class="col-10">
+        <div class="col-xl-10 col-md-8 shorten_input">
           <ModuleInput size="md" v-model="form.long_url" :placeholder="$btbLang.translate('shorten.url.placeholder')"/>
         </div>
-        <div class="col">
+        <div class="col-xl-2 col-md-4 shorten_button">
           <ModuleButton fullSize @click="shortenURL" :disabled="form.long_url.length===0">
             {{ $btbLang.translate('shorten.url.shorten') }}
           </ModuleButton>
@@ -151,7 +151,7 @@ export default {
         this.$swal({
           text: this.$btbLang.translate('shorten.url.submit.unlnowen'),
           button: {
-            text: this.$btbLang.translate('alert.buttom.ok'),
+            text: this.$btbLang.translate('alert.button.ok'),
             className: "module-button button-color-red button-type-solid button-size-md",
           },
           icon: 'error',
@@ -177,12 +177,17 @@ export default {
 
 <style lang="scss">
 .page-shorten {
-  width: 50%;
+  width: 100%;
   margin: auto;
+  padding: 1rem;
+  @include media-breakpoint-up-md {
+    width: 50%;
+    padding: 0;
+  }
 
   .shorten_title {
     @include font-5xl-l;
-    margin: 0;
+    margin: 1rem 0 0;
     text-align: center;
   }
   .shorten_description {
@@ -199,12 +204,23 @@ export default {
       }
     }
   }
+  .shorten_button {
+    margin-top: 1rem;
+    @include media-breakpoint-up-md {
+      margin: 0;
+    }
+  }
   .shorten_subtitle {
-    @include font-2xl-l;
+    @include font-lg-l;
+    @include margin-y(0.25rem);
+    @include media-breakpoint-up-md {
+      @include font-2xl-l;
+      @include margin-y(1rem);
+    }
   }
   .shorten_history {
-    width: 80%;
-    margin: auto;
+    width: 100%;
+    margin: 1rem auto;
   }
 
   .history_topBar {
