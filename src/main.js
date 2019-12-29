@@ -10,6 +10,7 @@ import '@/assets/style/index.scss' // global css
 import '@/plugins/module-languages'
 import '@/plugins/module-ui'
 import '@/plugins/vue-fontawesome'
+import '@/plugins/vue-swal'
 import '@/plugins/aos'
 
 Vue.config.productionTip = false;

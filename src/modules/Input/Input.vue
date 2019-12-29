@@ -41,7 +41,7 @@
 
 <script>
 export default {
-  name: 'oc-input',
+  name: 'module-input',
   model: {
     prop: 'value',
     event: 'update'

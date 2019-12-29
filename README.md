@@ -7,14 +7,18 @@ Side project for [shorten URL](https://blacktoolbox.appspot.com/)
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads
 ```
 npm run serve
+npm run serve:staging
+npm run serve:development
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies
 ```
 npm run build
+npm run build:staging
+npm run build:development
 ```
 
 ### Lints and fixes files

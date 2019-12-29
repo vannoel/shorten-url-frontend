@@ -9,7 +9,7 @@
           <ModuleInput size="md" v-model="form.long_url" :placeholder="$btbLang.translate('shorten.url.placeholder')"/>
         </div>
         <div class="col">
-          <ModuleButton fullSize @click="shortenURL">
+          <ModuleButton fullSize @click="shortenURL" :disabled="form.long_url.length===0">
             {{ $btbLang.translate('shorten.url.shorten') }}
           </ModuleButton>
         </div>
@@ -36,7 +36,7 @@
                 <div class="history_label">{{ $btbLang.translate('shorten.history.longURL.title') }}</div>
                 <div class="row align-items-center">
                   <div class="col">
-                    <ModuleInput size="sm" :value="url.longURL" readonly/>
+                    <ModuleInput class="history_form" size="sm" :value="url.longURL" @click="redirectURL(url.longURL)" readonly/>
                   </div>
                   <ModuleButton class="history_copy" size="sm" color="grey" @click="copyURL(url.longURL)">
                     {{ $btbLang.translate('shorten.history.copy') }}
@@ -46,7 +46,7 @@
                 <div class="history_label">{{ $btbLang.translate('shorten.history.shortenURL.title') }}</div>
                 <div class="row align-items-center">
                   <div class="col">
-                    <ModuleInput size="sm" :value="url.shortenURL" readonly/>
+                    <ModuleInput class="history_form" size="sm" :value="url.shortenURL" @click="redirectURL(url.shortenURL)" readonly/>
                   </div>
                   <ModuleButton class="history_copy" size="sm" color="grey" @click="copyURL(url.shortenURL)">
                     {{ $btbLang.translate('shorten.history.copy') }}
@@ -62,8 +62,9 @@
 </template>
 
 <script>
-// import API from '@/api'
-import {mapState} from 'vuex';
+import {mapState} from 'vuex'
+
+import API from '@/api'
 
 import _reviseISOString from '@/assets/utils/reviseISOString.js';
 
@@ -80,11 +81,6 @@ export default {
       'urls': 'urls'
     }),
   },
-  mounted() {
-    // console.log('API',API.shorten({
-    //   long_url: 'https://www.facebook.com/'
-    // }))
-  },
   methods: {
     reviseISOString: function(timestamp) {
       let obj = _reviseISOString(new Date(timestamp).toISOString())
@@ -93,15 +89,77 @@ export default {
     shortenURL: function() {
       let obj = { 
         longURL: this.form.long_url, 
-        shortenURL: `short_${this.form.long_url}`, 
+        shortenURL: '', 
         shortenAt: Date.now(),
         isLocked: false
       };
-      this.$store.dispatch('shorten/catch', obj);
-      this.form.long_url = '';
+      API.shorten(this.form.long_url).then(({data})=>{
+        switch(data.status)
+        {
+          case 200:
+            this.$swal({
+              text: this.$btbLang.translate('shorten.url.submit.success', {url: data.payload.url}),
+              buttons: {
+                open: {
+                  text: this.$btbLang.translate('alert.button.open'),
+                  className: "module-button button-color-grey button-type-solid button-size-md",
+                },
+                copy: {
+                  text: this.$btbLang.translate('alert.button.copy'),
+                  className: "module-button button-color-grey button-type-solid button-size-md",
+                },
+                close: {
+                  text: this.$btbLang.translate('alert.button.ok'),
+                  className: "module-button button-color-primary button-type-solid button-size-md",
+                }
+              },
+              icon: 'success',
+              closeOnClickOutside: false
+            }).then((value) => {
+              switch (value) {
+                case "open":
+                  this.redirectURL(data.payload.url)
+                  break;
+                case "copy":
+                  this.copyURL(data.payload.url)
+                  break;
+                default:
+                  obj.shortenURL = data.payload.url;
+                  this.$store.dispatch('shorten/catch', obj);
+                  this.form.long_url = '';
+                  break;
+              }
+            })
+            break;
+          case 400:
+            this.$swal({
+              text: this.$btbLang.translate('shorten.url.submit.invalidURL'),
+              button: {
+                text: this.$btbLang.translate('alert.button.ok'),
+                className: "module-button button-color-red button-type-solid button-size-md",
+              },
+              icon: 'error',
+              closeOnClickOutside: false
+            })
+            break;
+        }
+      }).catch(()=>{
+        this.$swal({
+          text: this.$btbLang.translate('shorten.url.submit.unlnowen'),
+          button: {
+            text: this.$btbLang.translate('alert.buttom.ok'),
+            className: "module-button button-color-red button-type-solid button-size-md",
+          },
+          icon: 'error',
+          closeOnClickOutside: false
+        })
+      })
     },
     removeHistory: function(timestamp) {
       this.$store.dispatch('shorten/remove', timestamp);
+    },
+    redirectURL: function(url) {
+      window.open(url)
     },
     copyURL: function(url) {
       let copyText = document.querySelector(`#copier`);
@@ -151,6 +209,11 @@ export default {
   }
   .history_label {
     @include margin-y(0.25rem);
+  }
+  .history_form {
+    .body_content {
+      cursor: pointer;
+    }
   }
   .history_copy {
     flex-shrink: 0;
