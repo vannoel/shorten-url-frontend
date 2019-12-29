@@ -1,0 +1,34 @@
+$color-button-solid-primary: (
+  index: 'primary',
+  textColor: $color-white,
+  bgColor: $color-primary,
+  bgColorHover: $color-primary-d,
+  bgColorActive: $color-primary-dd
+);
+$color-button-solid-teal: (
+  index: 'teal',
+  textColor: $color-white,
+  bgColor: $color-teal,
+  bgColorHover: $color-teal-d,
+  bgColorActive: $color-teal-dd
+);
+$color-button-solid-grey: (
+  index: 'grey',
+  textColor: $color-white,
+  bgColor: $color-grey,
+  bgColorHover: $color-grey-d,
+  bgColorActive: $color-grey-dd
+);
+$color-button-solid-red: (
+  index: 'red',
+  textColor: $color-white,
+  bgColor: $color-red,
+  bgColorHover: $color-red-d,
+  bgColorActive: $color-red-dd
+);
+
+$color-list-btn-solid:
+$color-button-solid-primary,
+$color-button-solid-teal,
+$color-button-solid-grey,
+$color-button-solid-red;

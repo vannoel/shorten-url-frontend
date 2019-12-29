@@ -1,0 +1,20 @@
+@mixin border-solid($weight) {
+  border-style: solid;
+  border-width: $weight;
+}
+@mixin border-solid-t($weight) {
+  border-top-style: solid;
+  border-top-width: $weight;
+}
+@mixin border-solid-r($weight) {
+  border-right-style: solid;
+  border-right-width: $weight;
+}
+@mixin border-solid-b($weight) {
+  border-bottom-style: solid;
+  border-bottom-width: $weight;
+}
+@mixin border-solid-l($weight) {
+  border-left-style: solid;
+  border-left-width: $weight;
+}

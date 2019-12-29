@@ -1,0 +1,8 @@
+@mixin margin-y($pad) {
+  margin-top: $pad;
+  margin-bottom: $pad;
+}
+@mixin margin-x($pad) {
+  margin-left: $pad;
+  margin-right: $pad;
+}

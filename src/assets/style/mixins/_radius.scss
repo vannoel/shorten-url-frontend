@@ -1,0 +1,88 @@
+$border-radius-f: 99px;
+$border-radius-lg: 0.5rem;
+$border-radius-md: 0.375rem;
+$border-radius-sm: 0.25rem;
+
+// full
+@mixin radius-full {
+  border-radius: $border-radius-f;
+}
+@mixin radius-full-t {
+  border-top-left-radius: $border-radius-f;
+  border-top-right-radius: $border-radius-f;
+}
+@mixin radius-full-r {
+  border-top-right-radius: $border-radius-f;
+  border-bottom-right-radius: $border-radius-f;
+}
+@mixin radius-full-b($value) {
+  border-bottom-left-radius: $border-radius-f;
+  border-bottom-right-radius: $border-radius-f;
+}
+@mixin radius-full-l($value) {
+  border-top-left-radius: $border-radius-f;
+  border-bottom-left-radius: $border-radius-f;
+}
+
+// lg
+@mixin radius-lg {
+  border-radius: $border-radius-lg;
+}
+@mixin radius-lg-t {
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+}
+@mixin radius-lg-r {
+  border-top-right-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
+}
+@mixin radius-lg-b {
+  border-bottom-left-radius: $border-radius-lg;
+  border-bottom-right-radius: $border-radius-lg;
+}
+@mixin radius-lg-l {
+  border-top-left-radius: $border-radius-lg;
+  border-bottom-left-radius: $border-radius-lg;
+}
+
+// md
+@mixin radius-md {
+  border-radius: $border-radius-md;
+}
+@mixin radius-md-t {
+  border-top-left-radius: $border-radius-md;
+  border-top-right-radius: $border-radius-md;
+}
+@mixin radius-md-r {
+  border-top-right-radius: $border-radius-md;
+  border-bottom-right-radius: $border-radius-md;
+}
+@mixin radius-md-b {
+  border-bottom-left-radius: $border-radius-md;
+  border-bottom-right-radius: $border-radius-md;
+}
+@mixin radius-md-l {
+  border-top-left-radius: $border-radius-md;
+  border-bottom-left-radius: $border-radius-md;
+}
+
+// sm: primary
+@mixin radius-sm {
+  border-radius: $border-radius-sm;
+}
+@mixin radius-sm-t {
+  border-top-left-radius: $border-radius-sm;
+  border-top-right-radius: $border-radius-sm;
+}
+@mixin radius-sm-r {
+  border-top-right-radius: $border-radius-sm;
+  border-bottom-right-radius: $border-radius-sm;
+}
+@mixin radius-sm-b {
+  border-bottom-left-radius: $border-radius-sm;
+  border-bottom-right-radius: $border-radius-sm;
+}
+@mixin radius-sm-l {
+  border-top-left-radius: $border-radius-sm;
+  border-bottom-left-radius: $border-radius-sm;
+}

@@ -1,0 +1,8 @@
+@mixin padding-y($pad) {
+  padding-top: $pad;
+  padding-bottom: $pad;
+}
+@mixin padding-x($pad) {
+  padding-left: $pad;
+  padding-right: $pad;
+}
