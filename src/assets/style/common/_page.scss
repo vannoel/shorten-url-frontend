@@ -3,7 +3,10 @@
   
   .page_section {
     & + .page_section {
-      margin-top: 3rem;
+      margin-top: 2rem;
+      @include media-breakpoint-up-md {
+        margin-top: 3rem;
+      };
     }  
   }
 }

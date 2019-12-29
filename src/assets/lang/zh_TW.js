@@ -3,6 +3,7 @@ export default {
 
   'shorten': {
     'title': '短網址服務',
+    'description': '本站假 TinyURL 的 shroten API 提供服務',
     'url': {
       'placeholder': '讓我來幫你縮短網址吧！',
       'shorten': '縮短',
