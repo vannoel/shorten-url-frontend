@@ -2,6 +2,7 @@
   <button :class="['module-button',
              `button-color-${color}`,
              `button-type-${type}`,
+             `button-size-${size}`,
              {'button-fullSize': fullSize}]"
           v-bind="$attrs"
           v-on="$listeners">
@@ -28,6 +29,10 @@ export default {
     type: {
       type: String,
       default: 'solid' // solid, ghost, border, text, inline
+    },
+    size: {
+      type: String,
+      default: 'md' // lg, md, sm
     },
     fullSize: {
       type: Boolean,
@@ -80,6 +85,22 @@ export default {
         }
       }
     }
+  }
+
+   &.button-size-lg {
+    @include font-md;
+    @include radius-lg;
+   padding: 0.75rem 1rem;
+  }
+  &.button-size-md {
+    @include font-md;
+    @include radius-md;
+    padding: 0.5rem 0.75rem;
+  }
+  &.button-size-sm {
+    @include font-sm;
+    @include radius-sm;
+    padding: 0.25rem 0.5rem;
   }
 }
 </style>

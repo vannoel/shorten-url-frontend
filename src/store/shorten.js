@@ -23,8 +23,8 @@ const mutations = {
     state.urls = tmpURLs.slice(0, LIMITATION_URL_CATCH);
   },
   REMOVE_URL: function (state, urlTimestamp) {
-    state.urls.filter((url)=>{
-      return (url.timestamp === urlTimestamp)
+    state.urls = state.urls.filter((url)=>{
+      return (url.shortenAt !== urlTimestamp)
     })
   }
 }

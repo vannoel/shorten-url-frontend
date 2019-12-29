@@ -8,7 +8,14 @@ export default {
       'shorten': '縮短'
     },
     'history': {
-      'title': '這裡是你最近 $count 筆縮短網址紀錄：'
+      'title': '這裡是你最近 $count 筆縮短網址紀錄：',
+      'copy': '複製',
+      'longURL': {
+        'title': '原始網址： '
+      },
+      'shortenURL': {
+        'title': '縮短網址： '
+      }
     }
   }
 }

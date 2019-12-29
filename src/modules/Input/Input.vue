@@ -1,5 +1,6 @@
 <template>
   <div :class="['module-input',
+                 `input-size-${size}`,
                 {'input-readonly': readonly},
                 {'input-disabled': disabled},
                 {'input-active': isActive},
@@ -17,6 +18,8 @@
       </template>
       <input class="body_content"
             :value="env.formValue"
+            :disabled="disabled"
+            :readonly="readonly"
             v-bind="$attrs"
             v-on="$listeners"
             @input="changeValue"
@@ -45,6 +48,10 @@ export default {
   },
   props: {
     value: [String, Number],
+    size: {
+      type: String,
+      default: 'md' // lg, md, sm
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -213,18 +220,52 @@ $input-insert-icon-active-color: $color-grey-dd;
     }
   }
 
-  .item-prepend,
-  .item-append,
-  .body_content {
-    @include font-md;
-    padding: 0.5rem 1rem;
-  }
-  .input_item{
-    &:first-child {
-      @include radius-lg-l;
+  &.input-size-lg {
+    .body_content,
+    .item-prepend,
+    .item-append {
+      @include font-md;
+      padding: 0.75rem 1rem;
     }
-    &:last-child {
-      @include radius-lg-r;
+    .input_item{
+      &:first-child {
+        @include radius-lg-l;
+      }
+      &:last-child {
+        @include radius-lg-r;
+      }
+    }
+  }
+  &.input-size-md {
+    .body_content,
+    .item-prepend,
+    .item-append {
+      @include font-md;
+     padding: 0.5rem 0.75rem;
+    }
+    .input_item{
+      &:first-child {
+        @include radius-md-l;
+      }
+      &:last-child {
+        @include radius-md-r;
+      }
+    }
+  }
+  &.input-size-sm {
+    .body_content,
+    .item-prepend,
+    .item-append {
+      @include font-sm;
+      padding: 0.25rem 0.5rem;
+    }
+    .input_item{
+      &:first-child {
+        @include radius-sm-l;
+      }
+      &:last-child {
+        @include radius-sm-r;
+      }
     }
   }
 }

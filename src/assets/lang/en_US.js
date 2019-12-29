@@ -8,7 +8,14 @@ export default {
       'shorten': 'Shorten'
     },
     'history': {
-      'title': 'Here is The latest $count URL you shortened:'
+      'title': 'Here is The latest $count URL you shortened:',
+      'copy': 'Copy',
+      'longURL': {
+        'title': 'Original URL: '
+      },
+      'shortenURL': {
+        'title': 'Shortened URL: '
+      }
     }
   }
 }
