@@ -65,39 +65,17 @@ $max: 12;
   flex-grow: 1;
   max-width: 100%;
 }
+@for $i from 1 through $max {
+  .col-#{$i} {
+    @include gridWidth($i);
+  }
+}
 .col-sm {
   @include media-breakpoint-up-sm {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
   };
-}
-.col-md {
-  @include media-breakpoint-up-md {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  };
-}
-.col-lg {
-  @include media-breakpoint-up-lg {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  };
-}
-.col-xl {
-  @include media-breakpoint-up-xl {
-    flex-basis: 0;
-    flex-grow: 1;
-    max-width: 100%;
-  };
-}
-
-@for $i from 1 through $max {
-  .col-#{$i} {
-    @include gridWidth($i);
-  }
 }
 @for $i from 1 through $max {
   .col-sm-#{$i} {
@@ -106,6 +84,13 @@ $max: 12;
     };
   }
 }
+.col-md {
+  @include media-breakpoint-up-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  };
+}
 @for $i from 1 through $max {
   .col-md-#{$i} {
     @include media-breakpoint-up-md {
@@ -113,12 +98,26 @@ $max: 12;
     };
   }
 }
+.col-lg {
+  @include media-breakpoint-up-lg {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  };
+}
 @for $i from 1 through $max {
   .col-lg-#{$i} {
     @include media-breakpoint-up-lg {
       @include gridWidth($i);
     };
   }
+}
+.col-xl {
+  @include media-breakpoint-up-xl {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  };
 }
 @for $i from 1 through $max {
   .col-xl-#{$i} {

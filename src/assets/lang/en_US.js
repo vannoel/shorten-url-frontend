@@ -3,6 +3,7 @@ export default {
   
   'shorten': {
     'title': 'Shorten URL',
+    'description': 'This service are using TinyURL\'s shorten API.',
     'url': {
       'placeholder': 'Let\'s shorten the URL!',
       'shorten': 'Shorten',
