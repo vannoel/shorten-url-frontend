@@ -1,0 +1,41 @@
+$color-default:   #f2f4f6;
+$color-backstage-default: #f4f5f7;
+
+$color-white:     #ffffff;
+$color-black:     #000000;
+
+// teal:
+$color-teal-ddd:  #0e4532;
+$color-teal-dd:   #1b6b4c; // click
+$color-teal-d:    #2c9167; // hover
+$color-teal:      #41b883; // btn
+$color-teal-l:    #64c496;
+$color-teal-ll:   #8cd1ad;
+$color-teal-lll:  #b8dec9; // disabled
+
+// grey:
+$color-grey-ddd:  #3C4145;
+$color-grey-dd:   #5C656B; // click
+$color-grey-d:    #889096; // hover
+$color-grey:      #ADB4BA; // btn
+$color-grey-l:    #D1D7DD;
+$color-grey-ll:   #E6EAED;
+$color-grey-lll:  #F7F7F7; // disabled
+
+// red:
+$color-red-ddd:   #491300;
+$color-red-dd:    #862200; // click
+$color-red-d:     #D23A09; // hover
+$color-red:       #EA5E2E; // btn
+$color-red-l:     #FF9884;
+$color-red-ll:    #FFB6A8;
+$color-red-lll:   #FFF6F5; // disabled
+
+// primary
+$color-primary-ddd: $color-teal-ddd;
+$color-primary-dd:  $color-teal-dd;
+$color-primary-d:   $color-teal-d;
+$color-primary:     $color-teal;
+$color-primary-l:   $color-teal-l;
+$color-primary-ll:  $color-teal-ll;
+$color-primary-lll: $color-teal-lll;
