@@ -1,5 +1,5 @@
 export default {
-  'powered_by': '由 Black Tool Box Laboratory 技術支援',
+  'powered_by': 'Black Tool Box Laboratory 開發',
 
   'shorten': {
     'title': '短網址服務',
