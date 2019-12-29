@@ -4,6 +4,10 @@
       <h1 class="shorten_title">
         {{ $btbLang.translate('shorten.title') }}
       </h1>
+      <p class="shorten_description">
+        <span class="description_context">{{ $btbLang.translate('shorten.description') }}</span>
+        <FAI class="description_link" :icon="['fas', 'external-link-alt']" fixed-width @click="redirectURL('https://tinyurl.com/')"/>
+      </p>
       <div class="row direction-row align-items-center">
         <div class="col-10">
           <ModuleInput size="md" v-model="form.long_url" :placeholder="$btbLang.translate('shorten.url.placeholder')"/>
@@ -178,9 +182,22 @@ export default {
 
   .shorten_title {
     @include font-5xl-l;
-    @include padding-y(1rem);
     margin: 0;
     text-align: center;
+  }
+  .shorten_description {
+    @include margin-y(1rem);
+    text-align: center;
+
+    .description_link {
+      margin-left: 0.5rem;
+      color: $color-primary;
+      cursor: pointer;
+      
+      &:hover {
+        color: $color-primary-dd;
+      }
+    }
   }
   .shorten_subtitle {
     @include font-2xl-l;
